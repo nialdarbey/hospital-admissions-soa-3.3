@@ -17,6 +17,7 @@
 				<sequence>
 					<element ref="mod:Episode" />
 					<element ref="mod:Bill" />
+					<element ref="mod:InsuranceCaseNumber" />
 				</sequence>
 				<element ref="mod:InsuranceCoverStatus" />
 			</choice>

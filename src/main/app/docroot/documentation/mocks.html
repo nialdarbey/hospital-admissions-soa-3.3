@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Hospital Admissions SOA · Mule Studio Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/bootstrap.css" rel="stylesheet">
+    <link href="assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/docs.css" rel="stylesheet">
+    <link href="assets/prettify.css" rel="stylesheet">
+
+    <script src="assets/track.js" data-site-id="4f0dc9fef5a1f55508000013" id="gauges-tracker" async="" type="text/javascript"></script><script src="assets/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-twttr-rendered="true" data-spy="scroll" data-target=".bs-docs-sidebar"><iframe style="display: none;" id="rufous-sandbox" name="uid13460061790411"></iframe>
+
+    <!-- Navbar
+    ================================================== -->
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand pull-left" href="#">Hospital Admissions SOA</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <a href="http://www.mulesoft.com" class="navbar-link">
+                <img src="./assets/images/mulesoft-logo-final.png" alt="MuleSoft" id="mulesoftlogo">
+              </a>
+            </p>
+            <ul class="nav">
+                                                                    <li class=""><a href="./index.html">
+                      <span class="en">Hospital Admissions SOA</span>
+                    </a></li>
+                                                                                                            <li class="active"><a href="./mocks.html">
+                        <span class="en">mocks</span>
+                      </a></li>
+                                                                </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+  <header class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>Hospital Admissions SOA</h1>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix">
+          <li class="nav-header">Flows</li>
+                  </ul>
+      </div>
+      <div class="span9">
+
+        <!-- Elements and their descriptions
+        ================================================== -->
+        <div style="height:100%;width:100%;overflow:auto;">
+          <img src="img/mocks.png" usemap="#mFlowMap" alt="Mule configuration image">
+          <map name="mFlowMap">
+                      </map>
+        </div>
+        <!--Mule configuration xml code-->
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" href="#collapseMuleConfiguration">
+            Show Mule Configuration XML code...
+          </a>
+        </div>
+        <div id="collapseMuleConfiguration" class="accordion-body collapse" style="height: 0px;">
+          <div class="accordion-inner">
+              <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;mule xmlns="http://www.mulesoft.org/schema/mule/core" version="EE-3.4.0"&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="insurance_request_to_insurance_response" transformationGraphPath="insurance_request_to_insurance_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="insurance_request_to_insurance_request_rejected" transformationGraphPath="insurance_request_to_insurance_request_rejected.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="upsert_patient_to_upsert_patient_response" transformationGraphPath="upsert_patient_to_upsert_patient_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="get_patient_to_get_patient_response" transformationGraphPath="get_patient_to_get_patient_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="create_episode_to_create_episode_response" transformationGraphPath="create_episode_to_create_episode_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="find_episodes_to_find_episodes_response" transformationGraphPath="find_episodes_to_find_episodes_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="create_bill_to_create_bill_response" transformationGraphPath="create_bill_to_create_bill_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="audit_request_to_audit_response" transformationGraphPath="audit_request_to_audit_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="InsuranceService" doc:name="InsuranceService" doc:description="Robs you of everything!"&gt;
+        &lt;http:inbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="InsuranceService" doc:name="InsuranceService"&gt;  &lt;/http:inbound-endpoint&gt;
+        &lt;cxf:proxy-service xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" port="InsurancePort" namespace="http://www.insurance.com/service" service="InsuranceService" payload="body" wsdlLocation="service/InsuranceService.wsdl" doc:name="Proxy service"&gt;   &lt;/cxf:proxy-service&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"&gt;    &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;choice doc:name="Choice"&gt;
+            &lt;when expression="#[xpath('/ins:InsuranceRequest/name/text()').text != 'Nial Darbey']"&gt;
+                &lt;processor-chain&gt;
+                    &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="insurance_request_to_insurance_response" doc:name="&amp;lt;InsuranceRequest /&amp;gt; to &amp;lt;InsuranceResponse /&amp;gt;"&gt;    &lt;/data-mapper:transform&gt;
+                &lt;/processor-chain&gt;
+            &lt;/when&gt;
+            &lt;otherwise&gt;
+                &lt;processor-chain&gt;
+                    &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="insurance_request_to_insurance_request_rejected" doc:name="&amp;lt;InsuranceRequest /&amp;gt; to &amp;lt;InsuranceResponse /&amp;gt;"&gt;    &lt;/data-mapper:transform&gt;
+                &lt;/processor-chain&gt;
+            &lt;/otherwise&gt;
+        &lt;/choice&gt;
+    &lt;/flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="PatientService" doc:name="PatientService"&gt;
+        &lt;http:inbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="PatientService" doc:name="PatientService"&gt;  &lt;/http:inbound-endpoint&gt;
+        &lt;cxf:proxy-service xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" port="PatientPort" namespace="http://www.mule-health.com/SOA/service/patient/1.0" service="PatientService" payload="body" wsdlLocation="service/PatientService.wsdl" doc:name="Proxy service"&gt;   &lt;/cxf:proxy-service&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"&gt;    &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;set-variable variableName="operation" value="#[xpath('fn:local-name(/*)')]" doc:name="operation"/&gt;
+        &lt;choice doc:name="Choice"&gt;
+            &lt;when expression="#[flowVars.operation == 'upsertPatient']"&gt;
+                &lt;processor-chain&gt;
+                    &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="upsert_patient_to_upsert_patient_response" doc:name="&amp;lt;upsertPatientRequest /&amp;gt; to &amp;lt;upsertPatientResponse /&amp;gt;"&gt;  &lt;/data-mapper:transform&gt;
+                &lt;/processor-chain&gt;
+            &lt;/when&gt;
+            &lt;otherwise&gt;
+                &lt;processor-chain&gt;
+                    &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="get_patient_to_get_patient_response" doc:name="&amp;lt;getPatient /&amp;gt; to &amp;lt;getPatientResponse /&amp;gt;"&gt; &lt;/data-mapper:transform&gt;
+                &lt;/processor-chain&gt;
+            &lt;/otherwise&gt;
+        &lt;/choice&gt;
+    &lt;/flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="EHRService" doc:name="EHRService"&gt;
+        &lt;http:inbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="EHRService" doc:name="EHRService"&gt;  &lt;/http:inbound-endpoint&gt;
+        &lt;cxf:proxy-service xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" port="EHRPort" namespace="http://www.mule-health.com/SOA/service/ehr/1.0" service="EHRService" payload="body" wsdlLocation="service/EHRService.wsdl" doc:name="Proxy service"&gt;   &lt;/cxf:proxy-service&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"&gt;    &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;set-variable variableName="operation" value="#[xpath('fn:local-name(/*)')]" doc:name="operation"/&gt;
+        &lt;choice doc:name="Choice"&gt;
+            &lt;when expression="#[flowVars.operation == 'createEpisode']"&gt;
+                &lt;processor-chain&gt;
+                    &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="create_episode_to_create_episode_response" doc:name="&amp;lt;createEpisode /&amp;gt; to &amp;lt;createEpisodeResponse /&amp;gt;"&gt; &lt;/data-mapper:transform&gt;
+                &lt;/processor-chain&gt;
+            &lt;/when&gt;
+            &lt;otherwise&gt;
+                &lt;processor-chain&gt;
+                    &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="find_episodes_to_find_episodes_response" doc:name="&amp;lt;findEpisode /&amp;gt; to &amp;lt;findEpisodeResponse /&amp;gt;"&gt;   &lt;/data-mapper:transform&gt;
+                &lt;/processor-chain&gt;
+            &lt;/otherwise&gt;
+        &lt;/choice&gt;
+    &lt;/flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="BillingService" doc:name="BillingService"&gt;
+        &lt;http:inbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="BillingService" doc:name="BillingService"&gt;  &lt;/http:inbound-endpoint&gt;
+        &lt;cxf:proxy-service xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" port="EHRPort" namespace="http://www.mule-health.com/SOA/service/ehr/1.0" service="EHRService" payload="body" wsdlLocation="service/EHRService.wsdl" doc:name="Proxy service"&gt;   &lt;/cxf:proxy-service&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"&gt;    &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="create_bill_to_create_bill_response" doc:name="&amp;lt;createBill /&amp;gt; to &amp;lt;createBillResponse /&amp;gt;"&gt; &lt;/data-mapper:transform&gt;
+    &lt;/flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="AuditService" doc:name="AuditService"&gt;
+        &lt;http:inbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="one-way" host="localhost" port="${http.port}" path="AuditService" transformer-refs="Object_to_String" doc:name="AuditService"&gt;   &lt;/http:inbound-endpoint&gt;
+        &lt;cxf:proxy-service xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" port="AuditPort" namespace="http://www.mule-health.com/SOA/service/audit/1.0" service="AuditService" payload="body" wsdlLocation="service/AuditService.wsdl" doc:name="Proxy service"&gt;   &lt;/cxf:proxy-service&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;logger message="#[payload]" level="INFO" doc:name="Log Transaction"/&gt;
+    &lt;/flow&gt;
+&lt;/mule&gt;
+</code></pre>
+
+          </div>
+        </div>
+
+              </div>
+    </div>
+  </div>
+
+<!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with <a href="http://www.mulesoft.com/mule-studio/" target="_blank">Mule Studio</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com/">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://blogs.mulesoft.org/">Read the blog</a></li>
+          <li><a href="http://www.mulesoft.org/jira/browse/">Submit issues</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/widgets.js"></script>
+    <script src="assets/jquery.js"></script>
+    <script src="assets/prettify.js"></script>
+    <script src="assets/bootstrap-transition.js"></script>
+    <script src="assets/bootstrap-alert.js"></script>
+    <script src="assets/bootstrap-modal.js"></script>
+    <script src="assets/bootstrap-dropdown.js"></script>
+    <script src="assets/bootstrap-scrollspy.js"></script>
+    <script src="assets/bootstrap-tab.js"></script>
+    <script src="assets/bootstrap-tooltip.js"></script>
+    <script src="assets/bootstrap-popover.js"></script>
+    <script src="assets/bootstrap-button.js"></script>
+    <script src="assets/bootstrap-collapse.js"></script>
+    <script src="assets/bootstrap-carousel.js"></script>
+    <script src="assets/bootstrap-typeahead.js"></script>
+    <script src="assets/bootstrap-affix.js"></script>
+    <script src="assets/application.js"></script>
+
+</body>
+</html>

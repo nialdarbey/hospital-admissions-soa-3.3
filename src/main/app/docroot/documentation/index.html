@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Hospital Admissions SOA · Mule Studio Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/bootstrap.css" rel="stylesheet">
+    <link href="assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/docs.css" rel="stylesheet">
+    <link href="assets/prettify.css" rel="stylesheet">
+
+    <script src="assets/track.js" data-site-id="4f0dc9fef5a1f55508000013" id="gauges-tracker" async="" type="text/javascript"></script><script src="assets/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-twttr-rendered="true" data-spy="scroll" data-target=".bs-docs-sidebar"><iframe style="display: none;" id="rufous-sandbox" name="uid13460061790411"></iframe>
+
+    <!-- Navbar
+    ================================================== -->
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand pull-left" href="#">Hospital Admissions SOA</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <a href="http://www.mulesoft.com" class="navbar-link">
+                <img src="./assets/images/mulesoft-logo-final.png" alt="MuleSoft" id="mulesoftlogo">
+              </a>
+            </p>
+            <ul class="nav">
+                                                                    <li class="active"><a href="./index.html">
+                      <span class="en">Hospital Admissions SOA</span>
+                    </a></li>
+                                                                                                            <li class=""><a href="./mocks.html">
+                        <span class="en">mocks</span>
+                      </a></li>
+                                                                </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+  <header class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>Hospital Admissions SOA</h1>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix">
+          <li class="nav-header">Flows</li>
+                      <li data-toggle="collapse" data-target="#_invokeAdmissionServiceWithBodyNav"><a href="#_invokeAdmissionServiceWithBody"><i class="icon-chevron-right"></i> invokeAdmissionServiceWithBody</a>
+            </li>
+            <div id="_invokeAdmissionServiceWithBodyNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_admitPatientNav"><a href="#_admitPatient"><i class="icon-chevron-right"></i> admitPatient</a>
+            </li>
+            <div id="_admitPatientNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                                                                                                                                                </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_auditTransactionNav"><a href="#_auditTransaction"><i class="icon-chevron-right"></i> auditTransaction</a>
+            </li>
+            <div id="_auditTransactionNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                                                                                                                                                </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_invokeAuditServiceNav"><a href="#_invokeAuditService"><i class="icon-chevron-right"></i> invokeAuditService</a>
+            </li>
+            <div id="_invokeAuditServiceNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_invokeInsuranceServiceNav"><a href="#_invokeInsuranceService"><i class="icon-chevron-right"></i> invokeInsuranceService</a>
+            </li>
+            <div id="_invokeInsuranceServiceNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_invokePatientServiceNav"><a href="#_invokePatientService"><i class="icon-chevron-right"></i> invokePatientService</a>
+            </li>
+            <div id="_invokePatientServiceNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_invokeEHRServiceNav"><a href="#_invokeEHRService"><i class="icon-chevron-right"></i> invokeEHRService</a>
+            </li>
+            <div id="_invokeEHRServiceNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_invokeBillingServiceNav"><a href="#_invokeBillingService"><i class="icon-chevron-right"></i> invokeBillingService</a>
+            </li>
+            <div id="_invokeBillingServiceNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                      <li data-toggle="collapse" data-target="#_invokeAdmissionServiceWithEnvelopeNav"><a href="#_invokeAdmissionServiceWithEnvelope"><i class="icon-chevron-right"></i> invokeAdmissionServiceWithEnvelope</a>
+            </li>
+            <div id="_invokeAdmissionServiceWithEnvelopeNav" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                <ul>
+                                                                                                              </ul>
+              </div>
+            </div>
+                  </ul>
+      </div>
+      <div class="span9">
+
+        <!-- Elements and their descriptions
+        ================================================== -->
+        <div style="height:100%;width:100%;overflow:auto;">
+          <img src="img/Hospital Admissions SOA.png" usemap="#mFlowMap" alt="Mule configuration image">
+          <map name="mFlowMap">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </map>
+        </div>
+        <!--Mule configuration xml code-->
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" href="#collapseMuleConfiguration">
+            Show Mule Configuration XML code...
+          </a>
+        </div>
+        <div id="collapseMuleConfiguration" class="accordion-body collapse" style="height: 0px;">
+          <div class="accordion-inner">
+              <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;mule xmlns="http://www.mulesoft.org/schema/mule/core" version="EE-3.4.0"&gt;
+    &lt;spring:beans xmlns:spring="http://www.springframework.org/schema/beans"&gt;
+        &lt;spring:bean id="property-placeholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"&gt;
+            &lt;spring:property name="location" value="classpath:config.${env}.properties"/&gt;
+        &lt;/spring:bean&gt;
+    &lt;/spring:beans&gt;
+    &lt;mulexml:namespace-manager xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" includeConfigNamespaces="true"&gt;  
+        &lt;mulexml:namespace prefix="soap" uri="http://schemas.xmlsoap.org/soap/envelope/"/&gt;  
+        &lt;mulexml:namespace prefix="mes" uri="http://www.mule-health.com/SOA/message/1.0"/&gt;  
+        &lt;mulexml:namespace prefix="mod" uri="http://www.mule-health.com/SOA/model/1.0"/&gt;  
+        &lt;mulexml:namespace prefix="ins" uri="http://www.insurance.com/message/1.0"/&gt; 
+    &lt;/mulexml:namespace-manager&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="admit_subject_to_insurance_request" transformationGraphPath="admit_subject_to_insurance_request.grf" doc:name="DataMapper"&gt;  &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="admit_subject_to_upsert_patient" transformationGraphPath="admit_subject_to_upsert_patient.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="upsert_patient_response_to_create_episode" transformationGraphPath="upsert_patient_response_to_create_episode.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="create_episode_response_to_create_bill" transformationGraphPath="create_episode_response_to_create_bill.grf" doc:name="DataMapper"&gt;  &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="json_to_admit_subject" transformationGraphPath="json_to_admit_subject.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;ajax:connector xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="Ajax" serverUrl="http://0.0.0.0:8083/admissionService" resourceBase="${app.home}/docroot" jsonCommented="true" doc:name="Ajax"&gt;   &lt;/ajax:connector&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="admit_subject_response_to_json" transformationGraphPath="admit_subject_response_to_json.grf" doc:name="DataMapper"&gt;  &lt;/data-mapper:config&gt;
+    &lt;object-to-string-transformer xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="Object_to_String" doc:name="Object to String"&gt;    &lt;/object-to-string-transformer&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="admit_subject_response_xx_to_json" transformationGraphPath="admit_subject_response_xx_to_json.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;data-mapper:config xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="create_episode_response_to_admit_subject_response" transformationGraphPath="create_episode_response_to_admit_subject_response.grf" doc:name="DataMapper"&gt;    &lt;/data-mapper:config&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="jsonProxy" doc:name="jsonProxy" doc:description="Flow which receives json requests from UI and transforms them into the SOAP Envelope expected by the admitPatientService before invoking the same. "&gt;
+        &lt;ajax:inbound-endpoint xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax" channel="/admission/json" responseTimeout="10000" connector-ref="Ajax" doc:name="/admission/json"&gt; &lt;/ajax:inbound-endpoint&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="json_to_admit_subject" doc:name="Json to &amp;lt;AdmitSubject /&amp;gt;"&gt; &lt;/data-mapper:transform&gt;
+        &lt;flow-ref name="invokeAdmissionServiceWithBody" doc:name="Invoke AdmissionService"/&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="admit_subject_response_xx_to_json" doc:name="&amp;lt;admitSubjectResponse /&amp;gt; to Json"&gt; &lt;/data-mapper:transform&gt;
+        &lt;object-to-string-transformer doc:name="Object to String"/&gt;
+    &lt;/flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokeAdmissionServiceWithBody" doc:name="invokeAdmissionServiceWithBody" doc:description="Invokes AdmissionService with body/*"&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="body" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="AdmissionService" doc:name="AdmissionService"&gt; &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="admitPatientService" doc:name="admitPatientService" doc:description="AdmssionService SOAP-based web-service."&gt;
+        &lt;http:inbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="AdmissionService" doc:name="AdmissionService"&gt;  &lt;/http:inbound-endpoint&gt;
+        &lt;cxf:proxy-service xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" port="AdmissionPort" namespace="http://www.mule-health.com/SOA/service/admission/1.0" service="AdmissionService" payload="body" wsdlLocation="service/AdmissionService.wsdl" doc:name="Proxy service"&gt;   &lt;/cxf:proxy-service&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+        &lt;vm:outbound-endpoint xmlns:vm="http://www.mulesoft.org/schema/mule/vm" exchange-pattern="one-way" path="Request" doc:name="Audit Request"&gt; &lt;/vm:outbound-endpoint&gt;
+        &lt;enricher target="sessionVars.insuranceResponse" doc:name="Enrich with &amp;lt;InsuranceResponse /&amp;gt;"&gt;
+            &lt;flow-ref xmlns="" name="getInsurancePolicy" doc:name="Get Insurance Policy"&gt;   &lt;/flow-ref&gt;
+        &lt;/enricher&gt;
+        &lt;choice doc:name="Choice"&gt;
+            &lt;when expression="#[xpath('/ins:InsuranceResponse/status/text()', sessionVars.insuranceResponse).text == 'Not covered']"&gt;
+                &lt;processor-chain&gt;
+                    &lt;mulexml:xslt-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="admit-subject-response-rejected.xslt" doc:name="&amp;lt;admitSubjectResponse /&amp;gt; (Rejected)"&gt;   &lt;/mulexml:xslt-transformer&gt;
+                &lt;/processor-chain&gt;
+            &lt;/when&gt;
+            &lt;otherwise&gt;
+                &lt;processor-chain&gt;
+                    &lt;flow-ref name="admitPatient" doc:name="Admit Patient"/&gt;
+                &lt;/processor-chain&gt;
+            &lt;/otherwise&gt;
+        &lt;/choice&gt;
+        &lt;vm:outbound-endpoint xmlns:vm="http://www.mulesoft.org/schema/mule/vm" exchange-pattern="one-way" path="Response" doc:name="Audit Response"&gt;   &lt;/vm:outbound-endpoint&gt;
+    &lt;/flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="admitPatient" doc:name="admitPatient" doc:description="Invokes all services needed to admit the Patient. Note that we enrich with the results of the BillingService because we still need createEpisodeResponse as payload to DataMapper."&gt;
+        &lt;flow-ref name="upsertPatient" doc:name="Upsert Patient"/&gt;
+        &lt;flow-ref name="createEpisode" doc:name="Create Episode"/&gt;
+        &lt;enricher target="flowVars.createBillResponse" doc:name="Enrich with &amp;lt;createBillResponse /&amp;gt;"&gt;
+            &lt;flow-ref xmlns="" name="createBill" doc:name="Create Bill"&gt;    &lt;/flow-ref&gt;
+        &lt;/enricher&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="create_episode_response_to_admit_subject_response" doc:name="&amp;lt;createEpisodeResponse /&amp;gt; to &amp;lt;admitSubjectResponse /&amp;gt;"&gt;
+            &lt;data-mapper:input-arguments&gt;
+                &lt;data-mapper:input-argument key="costPerNight"&gt;#[xpath('/mes:createBillResponse/mod:Bill/costPerNight/text()', flowVars.createBillResponse).text]   &lt;/data-mapper:input-argument&gt;
+                &lt;data-mapper:input-argument key="initialStayEstimate"&gt;#[xpath('/mes:createBillResponse/mod:Bill/initialStayEstimate/text()', flowVars.createBillResponse).text] &lt;/data-mapper:input-argument&gt;
+                &lt;data-mapper:input-argument key="runningTotal"&gt;#[xpath('/mes:createBillResponse/mod:Bill/runningTotal/text()', flowVars.createBillResponse).text]   &lt;/data-mapper:input-argument&gt;
+                &lt;data-mapper:input-argument key="status"&gt;#[xpath('/mes:createBillResponse/mod:Bill/status/text()', flowVars.createBillResponse).text]   &lt;/data-mapper:input-argument&gt;
+            &lt;/data-mapper:input-arguments&gt;
+        &lt;/data-mapper:transform&gt;
+    &lt;/sub-flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="auditTransaction" doc:name="auditTransaction" doc:description="Picks up request and response messages and invokes the AuditService with them. We can do this generically because the Transaction element in the model schema is extensible with &amp;lt;any /&amp;gt; in the message namespace. We determine the type of transaction based on the incoming path on the VM queue."&gt;
+        &lt;composite-source doc:name="Composite Source"&gt;
+            &lt;vm:inbound-endpoint xmlns:vm="http://www.mulesoft.org/schema/mule/vm" exchange-pattern="one-way" path="Request" doc:name="Request"&gt;    &lt;/vm:inbound-endpoint&gt;
+            &lt;vm:inbound-endpoint xmlns:vm="http://www.mulesoft.org/schema/mule/vm" exchange-pattern="one-way" path="Response" doc:name="Response"&gt;  &lt;/vm:inbound-endpoint&gt;
+        &lt;/composite-source&gt;
+        &lt;mulexml:xslt-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="payload-to-transaction.xslt" doc:name="&amp;lt;auditTransaction&amp;gt; payload &amp;lt;/auditTransaction&amp;gt;"&gt;   &lt;/mulexml:xslt-transformer&gt;
+        &lt;flow-ref name="invokeAuditService" doc:name="Invoke Audit Service"/&gt;
+    &lt;/flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokeAuditService" doc:name="invokeAuditService" doc:description="As is the case in all SOAP client calls: the HTTP outbound needs to be the last Message Processor on the sub-flow so that CXF doesn't overwrite any transformations with its own ones."&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="body" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="one-way" host="localhost" port="${http.port}" path="AuditService" doc:name="AuditService"&gt;  &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="getInsurancePolicy" doc:name="getInsurancePolicy"&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="admit_subject_to_insurance_request" doc:name="&amp;lt;admitSubject /&amp;gt; to &amp;lt;InsuranceRequest /&amp;gt;"&gt;  &lt;/data-mapper:transform&gt;
+        &lt;flow-ref name="invokeInsuranceService" doc:name="Invoke Insurance Service"/&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokeInsuranceService" doc:name="invokeInsuranceService"&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="body" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="InsuranceService" doc:name="InsuranceService"&gt; &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="upsertPatient" doc:name="upsertPatient"&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="admit_subject_to_upsert_patient" doc:name="&amp;lt;admitSubject /&amp;gt; to &amp;lt;upsertPatient /&amp;gt;"&gt;    &lt;/data-mapper:transform&gt;
+        &lt;flow-ref name="invokePatientService" doc:name="Invoke Patient Service"/&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokePatientService" doc:name="invokePatientService"&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="body" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="PatientService" doc:name="PatientService"&gt; &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="createEpisode" doc:name="createEpisode"&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="upsert_patient_response_to_create_episode" doc:name="&amp;lt;upsertPatientResponse /&amp;gt; to &amp;lt;createEpisode /&amp;gt;"&gt; &lt;/data-mapper:transform&gt;
+        &lt;flow-ref name="invokeEHRService" doc:name="Invoke EHR Service"/&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokeEHRService" doc:name="invokeEHRService"&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="body" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="EHRService" doc:name="EHRService"&gt; &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="createBill" doc:name="createBill"&gt;
+        &lt;data-mapper:transform xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" config-ref="create_episode_response_to_create_bill" doc:name="&amp;lt;createEpisodeResponse /&amp;gt; to &amp;lt;createBill /&amp;gt;"&gt;
+            &lt;data-mapper:input-arguments&gt;
+                &lt;data-mapper:input-argument key="insuranceCaseNumber"&gt;#[xpath('/ins:InsuranceResponse/caseNumber/text()', sessionVars.insuranceResponse).text]  &lt;/data-mapper:input-argument&gt;
+            &lt;/data-mapper:input-arguments&gt;
+        &lt;/data-mapper:transform&gt;
+        &lt;flow-ref name="invokeBillingService" doc:name="Invoke Billing Service"/&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+    &lt;/sub-flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokeBillingService" doc:name="invokeBillingService" doc:description="Invokes the Billing SErvice!"&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="body" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="BillingService" doc:name="BillingService"&gt; &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+    &lt;flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="soapProxy" doc:name="soapProxy"&gt;
+        &lt;ajax:inbound-endpoint xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax" channel="/admission/soap" responseTimeout="10000" connector-ref="Ajax" doc:name="/admission/soap"&gt; &lt;/ajax:inbound-endpoint&gt;
+        &lt;flow-ref name="invokeAdmissionServiceWithEnvelope" doc:name="Invoke AdmissionService"/&gt;
+        &lt;mulexml:dom-to-xml-transformer xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" returnClass="java.lang.String"&gt; &lt;/mulexml:dom-to-xml-transformer&gt;
+    &lt;/flow&gt;
+    &lt;sub-flow xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" name="invokeAdmissionServiceWithEnvelope" doc:name="invokeAdmissionServiceWithEnvelope"&gt;
+        &lt;cxf:proxy-client xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" payload="envelope" enableMuleSoapHeaders="true" doc:name="Proxy client"&gt;  &lt;/cxf:proxy-client&gt;
+        &lt;http:outbound-endpoint xmlns:http="http://www.mulesoft.org/schema/mule/http" exchange-pattern="request-response" host="localhost" port="${http.port}" path="AdmissionService" doc:name="AdmissionService"&gt; &lt;/http:outbound-endpoint&gt;
+    &lt;/sub-flow&gt;
+&lt;/mule&gt;
+</code></pre>
+
+          </div>
+        </div>
+
+                  <section id="_invokeAdmissionServiceWithBody">
+            <div class="page-header">
+                <h1>invokeAdmissionServiceWithBody</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokeAdmissionServiceWithBody.png" usemap="#flowMapinvokeAdmissionServiceWithBody" alt="invokeAdmissionServiceWithBody image">
+              <map name="flowMapinvokeAdmissionServiceWithBody">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokeAdmissionServiceWithBodyxml_code">
+                Show configuration XML code of the flow invokeAdmissionServiceWithBody...
+              </a>
+            </div>
+            <div id="_invokeAdmissionServiceWithBodyxml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokeAdmissionServiceWithBody"&gt;
+    &lt;cxf:proxy-client payload="body" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" path="AdmissionService"&gt;   &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p><p>Invokes AdmissionService with body/*</p>
+</p>
+                                                                          </section>
+                  <section id="_admitPatient">
+            <div class="page-header">
+                <h1>admitPatient</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/admitPatient.png" usemap="#flowMapadmitPatient" alt="admitPatient image">
+              <map name="flowMapadmitPatient">
+                                                                                                                                                                                                        </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_admitPatientxml_code">
+                Show configuration XML code of the flow admitPatient...
+              </a>
+            </div>
+            <div id="_admitPatientxml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="admitPatient"&gt;
+    &lt;flow-ref name="upsertPatient"/&gt;
+    &lt;flow-ref name="createEpisode"/&gt;
+    &lt;enricher target="flowVars.createBillResponse"&gt;
+        &lt;flow-ref name="createBill"&gt;    &lt;/flow-ref&gt;
+    &lt;/enricher&gt;
+    &lt;data-mapper:transform config-ref="create_episode_response_to_admit_subject_response"&gt;
+        &lt;data-mapper:input-arguments&gt;
+            &lt;data-mapper:input-argument key="costPerNight"&gt;#[xpath('/mes:createBillResponse/mod:Bill/costPerNight/text()', flowVars.createBillResponse).text]   &lt;/data-mapper:input-argument&gt;
+            &lt;data-mapper:input-argument key="initialStayEstimate"&gt;#[xpath('/mes:createBillResponse/mod:Bill/initialStayEstimate/text()', flowVars.createBillResponse).text] &lt;/data-mapper:input-argument&gt;
+            &lt;data-mapper:input-argument key="runningTotal"&gt;#[xpath('/mes:createBillResponse/mod:Bill/runningTotal/text()', flowVars.createBillResponse).text]   &lt;/data-mapper:input-argument&gt;
+            &lt;data-mapper:input-argument key="status"&gt;#[xpath('/mes:createBillResponse/mod:Bill/status/text()', flowVars.createBillResponse).text]   &lt;/data-mapper:input-argument&gt;
+        &lt;/data-mapper:input-arguments&gt;
+    &lt;/data-mapper:transform&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p><p>Invokes all services needed to admit the Patient. Note that we enrich with the results of the BillingService because we still need createEpisodeResponse as payload to DataMapper.</p>
+</p>
+                                                                                                                                                        </section>
+                  <section id="_auditTransaction">
+            <div class="page-header">
+                <h1>auditTransaction</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/auditTransaction.png" usemap="#flowMapauditTransaction" alt="auditTransaction image">
+              <map name="flowMapauditTransaction">
+                                                                                                                                                                                                        </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_auditTransactionxml_code">
+                Show configuration XML code of the flow auditTransaction...
+              </a>
+            </div>
+            <div id="_auditTransactionxml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;flow name="auditTransaction"&gt;
+    &lt;composite-source&gt;
+        &lt;vm:inbound-endpoint exchange-pattern="one-way" path="Request"&gt; &lt;/vm:inbound-endpoint&gt;
+        &lt;vm:inbound-endpoint exchange-pattern="one-way" path="Response"&gt;    &lt;/vm:inbound-endpoint&gt;
+    &lt;/composite-source&gt;
+    &lt;mulexml:xslt-transformer maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="payload-to-transaction.xslt"&gt; &lt;/mulexml:xslt-transformer&gt;
+    &lt;flow-ref name="invokeAuditService"/&gt;
+&lt;/flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p><p>Picks up request and response messages and invokes the AuditService with them. We can do this generically because the Transaction element in the model schema is extensible with <any /> in the message namespace. We determine the type of transaction based on the incoming path on the VM queue.</p>
+</p>
+                                                                                                                                                        </section>
+                  <section id="_invokeAuditService">
+            <div class="page-header">
+                <h1>invokeAuditService</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokeAuditService.png" usemap="#flowMapinvokeAuditService" alt="invokeAuditService image">
+              <map name="flowMapinvokeAuditService">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokeAuditServicexml_code">
+                Show configuration XML code of the flow invokeAuditService...
+              </a>
+            </div>
+            <div id="_invokeAuditServicexml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokeAuditService"&gt;
+    &lt;cxf:proxy-client payload="body" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="one-way" host="localhost" port="${http.port}" path="AuditService"&gt;    &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p><p>As is the case in all SOAP client calls: the HTTP outbound needs to be the last Message Processor on the sub-flow so that CXF doesn't overwrite any transformations with its own ones.</p>
+</p>
+                                                                          </section>
+                  <section id="_invokeInsuranceService">
+            <div class="page-header">
+                <h1>invokeInsuranceService</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokeInsuranceService.png" usemap="#flowMapinvokeInsuranceService" alt="invokeInsuranceService image">
+              <map name="flowMapinvokeInsuranceService">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokeInsuranceServicexml_code">
+                Show configuration XML code of the flow invokeInsuranceService...
+              </a>
+            </div>
+            <div id="_invokeInsuranceServicexml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokeInsuranceService"&gt;
+    &lt;cxf:proxy-client payload="body" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" path="InsuranceService"&gt;   &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p>
+</p>
+                                                                          </section>
+                  <section id="_invokePatientService">
+            <div class="page-header">
+                <h1>invokePatientService</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokePatientService.png" usemap="#flowMapinvokePatientService" alt="invokePatientService image">
+              <map name="flowMapinvokePatientService">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokePatientServicexml_code">
+                Show configuration XML code of the flow invokePatientService...
+              </a>
+            </div>
+            <div id="_invokePatientServicexml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokePatientService"&gt;
+    &lt;cxf:proxy-client payload="body" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" path="PatientService"&gt; &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p>
+</p>
+                                                                          </section>
+                  <section id="_invokeEHRService">
+            <div class="page-header">
+                <h1>invokeEHRService</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokeEHRService.png" usemap="#flowMapinvokeEHRService" alt="invokeEHRService image">
+              <map name="flowMapinvokeEHRService">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokeEHRServicexml_code">
+                Show configuration XML code of the flow invokeEHRService...
+              </a>
+            </div>
+            <div id="_invokeEHRServicexml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokeEHRService"&gt;
+    &lt;cxf:proxy-client payload="body" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" path="EHRService"&gt; &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p>
+</p>
+                                                                          </section>
+                  <section id="_invokeBillingService">
+            <div class="page-header">
+                <h1>invokeBillingService</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokeBillingService.png" usemap="#flowMapinvokeBillingService" alt="invokeBillingService image">
+              <map name="flowMapinvokeBillingService">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokeBillingServicexml_code">
+                Show configuration XML code of the flow invokeBillingService...
+              </a>
+            </div>
+            <div id="_invokeBillingServicexml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokeBillingService"&gt;
+    &lt;cxf:proxy-client payload="body" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" path="BillingService"&gt; &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p><p>Invokes the Billing SErvice!</p>
+</p>
+                                                                          </section>
+                  <section id="_invokeAdmissionServiceWithEnvelope">
+            <div class="page-header">
+                <h1>invokeAdmissionServiceWithEnvelope</h1>
+            </div>
+            <div style="height:100%;width:100%;overflow:auto;">
+              <img src="img/invokeAdmissionServiceWithEnvelope.png" usemap="#flowMapinvokeAdmissionServiceWithEnvelope" alt="invokeAdmissionServiceWithEnvelope image">
+              <map name="flowMapinvokeAdmissionServiceWithEnvelope">
+                                                                                                  </map>
+            </div>
+            <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#_invokeAdmissionServiceWithEnvelopexml_code">
+                Show configuration XML code of the flow invokeAdmissionServiceWithEnvelope...
+              </a>
+            </div>
+            <div id="_invokeAdmissionServiceWithEnvelopexml_code" class="accordion-body collapse" style="height: 0px;">
+              <div class="accordion-inner">
+                  <pre class="prettyprint"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;sub-flow name="invokeAdmissionServiceWithEnvelope"&gt;
+    &lt;cxf:proxy-client payload="envelope" enableMuleSoapHeaders="true"&gt;  &lt;/cxf:proxy-client&gt;
+    &lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" path="AdmissionService"&gt;   &lt;/http:outbound-endpoint&gt;
+&lt;/sub-flow&gt;
+</code></pre>
+
+              </div>
+            </div>
+            <p>
+</p>
+                                                                          </section>
+              </div>
+    </div>
+  </div>
+
+<!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with <a href="http://www.mulesoft.com/mule-studio/" target="_blank">Mule Studio</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com/">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://blogs.mulesoft.org/">Read the blog</a></li>
+          <li><a href="http://www.mulesoft.org/jira/browse/">Submit issues</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/widgets.js"></script>
+    <script src="assets/jquery.js"></script>
+    <script src="assets/prettify.js"></script>
+    <script src="assets/bootstrap-transition.js"></script>
+    <script src="assets/bootstrap-alert.js"></script>
+    <script src="assets/bootstrap-modal.js"></script>
+    <script src="assets/bootstrap-dropdown.js"></script>
+    <script src="assets/bootstrap-scrollspy.js"></script>
+    <script src="assets/bootstrap-tab.js"></script>
+    <script src="assets/bootstrap-tooltip.js"></script>
+    <script src="assets/bootstrap-popover.js"></script>
+    <script src="assets/bootstrap-button.js"></script>
+    <script src="assets/bootstrap-collapse.js"></script>
+    <script src="assets/bootstrap-carousel.js"></script>
+    <script src="assets/bootstrap-typeahead.js"></script>
+    <script src="assets/bootstrap-affix.js"></script>
+    <script src="assets/application.js"></script>
+
+</body>
+</html>

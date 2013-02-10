@@ -72,17 +72,17 @@
             <property value="8" name="auxiliary;index"/>
         </properties>
     </global-element>
-    <flow SubFlow="false" name="InsuranceService" entity-id="bd1c7c8c-f20e-4a59-8e2c-a67d70891140">
+    <flow SubFlow="false" name="InsuranceService" entity-id="6146d7bc-9e90-4b31-8321-4a06f818c317">
         <properties>
-            <property name="processingStrategy2"/>
-            <property name="processingStrategy"/>
+            <property value="" name="processingStrategy2"/>
+            <property value="" name="bussinessEventsLabel"/>
+            <property value="false" name="tracking:enable-default-events"/>
+            <property value="true" name="auxiliary;erased;processingStrategy2"/>
             <property value="9" name="auxiliary;index"/>
-            <property name="bussinessEventsLabel"/>
-            <property name="tracking:enable-default-events"/>
-            <property value="9" name="auxiliary;index"/>
-            <property value="9" name="auxiliary;index"/>
-            <property value="9" name="auxiliary;index"/>
+            <property name="updated"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/ee/tracking/transaction;673833372"/>
         </properties>
+        <description>Robs you of everything!</description>
         <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#1">
             <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="InsuranceService" entity-id="HTTP#1">
                 <properties>
@@ -170,20 +170,39 @@
             </unknown>
             <splitter index="13" type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#1">
                 <properties>
-                    <property-collection name="97435daa-d3fd-4e44-bb20-b3aacc221bb7">
+                    <property value="13" name=";INDEX"/>
+                    <property value="13" name=";INDEX"/>
+                    <property value="13" name=";INDEX"/>
+                    <property-collection name="163a77d2-892b-406c-a227-ee1fd287a271">
                         <property value="true" name="choice.otherwise"/>
                         <property-collection name="choice.attributes"/>
                     </property-collection>
-                    <property-collection name="dd1087e7-8b6b-47ad-aca6-fe25b45ce310">
+                    <property-collection name="c5cdbf51-2ad6-473f-b343-6e05077f933c">
                         <property value="#[xpath('/ins:InsuranceRequest/name/text()').text != 'Nial Darbey']" name="choice.expression"/>
                         <property-collection name="choice.attributes">
                             <property value="#[xpath('/ins:InsuranceRequest/name/text()').text != 'Nial Darbey']" name="expression"/>
                         </property-collection>
                     </property-collection>
                 </properties>
-                <pattern type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#2"/>
+                <pattern type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#2">
+                    <properties>
+                        <property value="13" name=";INDEX"/>
+                        <property value="13" name=";INDEX"/>
+                        <property value="13" name=";INDEX"/>
+                        <property-collection name="163a77d2-892b-406c-a227-ee1fd287a271">
+                            <property value="true" name="choice.otherwise"/>
+                            <property-collection name="choice.attributes"/>
+                        </property-collection>
+                        <property-collection name="c5cdbf51-2ad6-473f-b343-6e05077f933c">
+                            <property value="#[xpath('/ins:InsuranceRequest/name/text()').text != 'Nial Darbey']" name="choice.expression"/>
+                            <property-collection name="choice.attributes">
+<property value="#[xpath('/ins:InsuranceRequest/name/text()').text != 'Nial Darbey']" name="expression"/>
+                            </property-collection>
+                        </property-collection>
+                    </properties>
+                </pattern>
                 <compartment entity-id="compartment#1">
-                    <lane isChoiceOtherwiseLane="false" index="15" hadOnlyOneElement="false" entity-id="dd1087e7-8b6b-47ad-aca6-fe25b45ce310">
+                    <lane isChoiceOtherwiseLane="false" index="15" hadOnlyOneElement="false" entity-id="c5cdbf51-2ad6-473f-b343-6e05077f933c">
                         <pattern type="http://www.mulesoft.org/schema/mule/ee/data-mapper/data-mapper-connector" name="&lt;InsuranceRequest /&gt; to &lt;InsuranceResponse /&gt;" entity-id="DataMapper#9">
                             <properties>
 <property value="insurance_request_to_insurance_response" name="config-ref"/>
@@ -202,7 +221,7 @@
                             </properties>
                         </pattern>
                     </lane>
-                    <lane isChoiceOtherwiseLane="true" index="18" hadOnlyOneElement="false" entity-id="97435daa-d3fd-4e44-bb20-b3aacc221bb7">
+                    <lane isChoiceOtherwiseLane="true" index="18" hadOnlyOneElement="false" entity-id="163a77d2-892b-406c-a227-ee1fd287a271">
                         <pattern type="http://www.mulesoft.org/schema/mule/ee/data-mapper/data-mapper-connector" name="&lt;InsuranceRequest /&gt; to &lt;InsuranceResponse /&gt;" entity-id="DataMapper#10">
                             <properties>
 <property value="insurance_request_to_insurance_request_rejected" name="config-ref"/>
@@ -225,7 +244,7 @@
             </splitter>
         </lane>
     </flow>
-    <flow SubFlow="false" name="PatientService" entity-id="0420bd55-a7e1-433b-9c86-4f1e172172bf">
+    <flow SubFlow="false" name="PatientService" entity-id="ea01a98f-c190-4f15-83c7-278951758bcd">
         <properties>
             <property name="processingStrategy2"/>
             <property name="processingStrategy"/>
@@ -325,7 +344,7 @@
                 <properties>
                     <property value="http://www.mulesoft.org/schema/mule/core/set-variable" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
                     <property value="operation" name="variableName"/>
-                    <property value="#[xpath:fn:local-name(/*)]" name="value"/>
+                    <property value="#[xpath('fn:local-name(/*)')]" name="value"/>
                     <property value="24" name="auxiliary;index"/>
                     <property value="24" name="auxiliary;index"/>
                     <property value="24" name="auxiliary;index"/>
@@ -337,20 +356,39 @@
             </pattern>
             <splitter index="25" type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#3">
                 <properties>
-                    <property-collection name="85638f01-7a51-4468-b484-9b0e871a5a08">
+                    <property value="25" name=";INDEX"/>
+                    <property value="25" name=";INDEX"/>
+                    <property value="25" name=";INDEX"/>
+                    <property-collection name="2a27a1a4-b798-45d4-a36e-351450865602">
+                        <property value="true" name="choice.otherwise"/>
+                        <property-collection name="choice.attributes"/>
+                    </property-collection>
+                    <property-collection name="e2ff29b9-b9a2-42c8-94c1-e8264b351169">
                         <property value="#[flowVars.operation == 'upsertPatient']" name="choice.expression"/>
                         <property-collection name="choice.attributes">
                             <property value="#[flowVars.operation == 'upsertPatient']" name="expression"/>
                         </property-collection>
                     </property-collection>
-                    <property-collection name="74c457e1-45da-40e0-90b9-c977ce00f5af">
-                        <property value="true" name="choice.otherwise"/>
-                        <property-collection name="choice.attributes"/>
-                    </property-collection>
                 </properties>
-                <pattern type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#4"/>
+                <pattern type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#4">
+                    <properties>
+                        <property value="25" name=";INDEX"/>
+                        <property value="25" name=";INDEX"/>
+                        <property value="25" name=";INDEX"/>
+                        <property-collection name="2a27a1a4-b798-45d4-a36e-351450865602">
+                            <property value="true" name="choice.otherwise"/>
+                            <property-collection name="choice.attributes"/>
+                        </property-collection>
+                        <property-collection name="e2ff29b9-b9a2-42c8-94c1-e8264b351169">
+                            <property value="#[flowVars.operation == 'upsertPatient']" name="choice.expression"/>
+                            <property-collection name="choice.attributes">
+<property value="#[flowVars.operation == 'upsertPatient']" name="expression"/>
+                            </property-collection>
+                        </property-collection>
+                    </properties>
+                </pattern>
                 <compartment entity-id="compartment#2">
-                    <lane isChoiceOtherwiseLane="false" index="27" hadOnlyOneElement="false" entity-id="85638f01-7a51-4468-b484-9b0e871a5a08">
+                    <lane isChoiceOtherwiseLane="false" index="27" hadOnlyOneElement="false" entity-id="e2ff29b9-b9a2-42c8-94c1-e8264b351169">
                         <pattern type="http://www.mulesoft.org/schema/mule/ee/data-mapper/data-mapper-connector" name="&lt;upsertPatientRequest /&gt; to &lt;upsertPatientResponse /&gt;" entity-id="DataMapper#11">
                             <properties>
 <property value="upsert_patient_to_upsert_patient_response" name="config-ref"/>
@@ -369,7 +407,7 @@
                             </properties>
                         </pattern>
                     </lane>
-                    <lane isChoiceOtherwiseLane="true" index="30" hadOnlyOneElement="false" entity-id="74c457e1-45da-40e0-90b9-c977ce00f5af">
+                    <lane isChoiceOtherwiseLane="true" index="30" hadOnlyOneElement="false" entity-id="2a27a1a4-b798-45d4-a36e-351450865602">
                         <pattern type="http://www.mulesoft.org/schema/mule/ee/data-mapper/data-mapper-connector" name="&lt;getPatient /&gt; to &lt;getPatientResponse /&gt;" entity-id="DataMapper#12">
                             <properties>
 <property value="get_patient_to_get_patient_response" name="config-ref"/>
@@ -392,7 +430,7 @@
             </splitter>
         </lane>
     </flow>
-    <flow SubFlow="false" name="EHRService" entity-id="5998978f-c96d-4403-a77b-ae0792809119">
+    <flow SubFlow="false" name="EHRService" entity-id="cb249a3a-364a-4851-91a3-5719bc75e014">
         <properties>
             <property name="processingStrategy2"/>
             <property name="processingStrategy"/>
@@ -492,7 +530,7 @@
                 <properties>
                     <property value="http://www.mulesoft.org/schema/mule/core/set-variable" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
                     <property value="operation" name="variableName"/>
-                    <property value="#[xpath:fn:local-name(/*)]" name="value"/>
+                    <property value="#[xpath('fn:local-name(/*)')]" name="value"/>
                     <property value="36" name="auxiliary;index"/>
                     <property value="36" name="auxiliary;index"/>
                     <property value="36" name="auxiliary;index"/>
@@ -504,20 +542,39 @@
             </pattern>
             <splitter index="37" type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#5">
                 <properties>
-                    <property-collection name="5ad526bd-c7d7-4376-a398-70c8be13d8f2">
+                    <property value="37" name=";INDEX"/>
+                    <property value="37" name=";INDEX"/>
+                    <property value="37" name=";INDEX"/>
+                    <property-collection name="8cfd13fe-3a5e-47a5-ab83-11e27eb8c314">
                         <property value="#[flowVars.operation == 'createEpisode']" name="choice.expression"/>
                         <property-collection name="choice.attributes">
                             <property value="#[flowVars.operation == 'createEpisode']" name="expression"/>
                         </property-collection>
                     </property-collection>
-                    <property-collection name="9cd45587-a22c-43fd-b88b-02375a76bb3a">
+                    <property-collection name="5e832466-2b4f-411e-88dc-ee208318c2c5">
                         <property value="true" name="choice.otherwise"/>
                         <property-collection name="choice.attributes"/>
                     </property-collection>
                 </properties>
-                <pattern type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#6"/>
+                <pattern type="org.mule.tooling.ui.modules.core.pattern.cbr" name="Choice" entity-id="Choice#6">
+                    <properties>
+                        <property value="37" name=";INDEX"/>
+                        <property value="37" name=";INDEX"/>
+                        <property value="37" name=";INDEX"/>
+                        <property-collection name="8cfd13fe-3a5e-47a5-ab83-11e27eb8c314">
+                            <property value="#[flowVars.operation == 'createEpisode']" name="choice.expression"/>
+                            <property-collection name="choice.attributes">
+<property value="#[flowVars.operation == 'createEpisode']" name="expression"/>
+                            </property-collection>
+                        </property-collection>
+                        <property-collection name="5e832466-2b4f-411e-88dc-ee208318c2c5">
+                            <property value="true" name="choice.otherwise"/>
+                            <property-collection name="choice.attributes"/>
+                        </property-collection>
+                    </properties>
+                </pattern>
                 <compartment entity-id="compartment#3">
-                    <lane isChoiceOtherwiseLane="false" index="39" hadOnlyOneElement="false" entity-id="5ad526bd-c7d7-4376-a398-70c8be13d8f2">
+                    <lane isChoiceOtherwiseLane="false" index="39" hadOnlyOneElement="false" entity-id="8cfd13fe-3a5e-47a5-ab83-11e27eb8c314">
                         <pattern type="http://www.mulesoft.org/schema/mule/ee/data-mapper/data-mapper-connector" name="&lt;createEpisode /&gt; to &lt;createEpisodeResponse /&gt;" entity-id="DataMapper#13">
                             <properties>
 <property value="create_episode_to_create_episode_response" name="config-ref"/>
@@ -536,7 +593,7 @@
                             </properties>
                         </pattern>
                     </lane>
-                    <lane isChoiceOtherwiseLane="true" index="42" hadOnlyOneElement="false" entity-id="9cd45587-a22c-43fd-b88b-02375a76bb3a">
+                    <lane isChoiceOtherwiseLane="true" index="42" hadOnlyOneElement="false" entity-id="5e832466-2b4f-411e-88dc-ee208318c2c5">
                         <pattern type="http://www.mulesoft.org/schema/mule/ee/data-mapper/data-mapper-connector" name="&lt;findEpisode /&gt; to &lt;findEpisodeResponse /&gt;" entity-id="DataMapper#14">
                             <properties>
 <property value="find_episodes_to_find_episodes_response" name="config-ref"/>
@@ -559,7 +616,7 @@
             </splitter>
         </lane>
     </flow>
-    <flow SubFlow="false" name="BillingService" entity-id="fa052921-0196-470d-9dda-83ba638db38f">
+    <flow SubFlow="false" name="BillingService" entity-id="259749ca-569e-4549-a3eb-2865c97cd926">
         <properties>
             <property name="processingStrategy2"/>
             <property name="processingStrategy"/>
@@ -674,7 +731,7 @@
             </pattern>
         </lane>
     </flow>
-    <flow SubFlow="false" name="AuditService" entity-id="72933bde-b903-4e8b-ad17-e95f30cb13af">
+    <flow SubFlow="false" name="AuditService" entity-id="b1e0b3bf-a8fc-4267-9685-598100aec7bf">
         <properties>
             <property name="processingStrategy2"/>
             <property name="processingStrategy"/>
